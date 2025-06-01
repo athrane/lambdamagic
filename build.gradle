@@ -19,6 +19,9 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 base {
@@ -65,7 +68,7 @@ neoForge {
         }
 
         data {
-            clientData()
+            data()
 
             // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
             // gameDirectory = project.file('run-data')
@@ -133,6 +136,11 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    // Dependency to the Placebo library to get access to reusable logic.
+    //implementation "curse.maven:shadows.placebo:Placebo-1.21.1-9.8.1"
+    //implementation fg.deobf("shadows.placebo:Placebo-${minecraft_version}:${placebo_version}")
+    implementation "curse.maven:placebo-283644:6446766"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
